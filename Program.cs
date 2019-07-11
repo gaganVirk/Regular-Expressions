@@ -11,16 +11,20 @@ namespace LearningCSharp
     {
         public void Run()
         {
-            string s1 = "One,Two,Three Liberty Associates, Inc.";
-            Regex theRegex = new Regex(" |, |,");
-            StringBuilder sBuilder = new StringBuilder();
-            int id = 1;
+            string statement = "To be, or not to be: That is the question: Whether ’tis nobler in the mind to suffer the slings and " +
+                "arrows of outrageous fortune, or to take arms against a sea of troubles, and by opposing end them? ";
 
-            foreach(string subString in theRegex.Split(s1))
+            char[] delimiters = { ',', ':', ' ' };
+
+            string[] stringArray = statement.Split(delimiters);
+            Array.Reverse(stringArray);
+
+            StringBuilder stringBuilder = new StringBuilder();
+            foreach (string reverse in stringArray)
             {
-                sBuilder.AppendFormat("{0}: {1}\n", id++, subString);
+                stringBuilder.AppendFormat("{0} ", reverse);
             }
-            Console.WriteLine("{0}", sBuilder);
+            Console.WriteLine(stringBuilder);
         }
     
     static void Main(string[] args)
