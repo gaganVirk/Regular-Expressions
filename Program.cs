@@ -11,18 +11,19 @@ namespace LearningCSharp
     {
         public void Run()
         {
-            string s = "To be, or not to be: That is the question: Whether ’tis nobler in the mind to suffer the slings and" +
-                " arrows of outrageous fortune, or to take arms against a sea of troubles, and by opposing end them? ";
+            string theString = "We choose to go to the moon. We choose to go to the moon in this decade and" +
+                " do the other things, not because they are easy, but because they are hard, because that" +
+                " goal will serve to organize and measure the best of our energies and skills, because that " +
+                "challenge is one that we are willing to accept, one we are unwilling to postpone, and" +
+                " one which we intend to win, and the others, too. ";
 
-            char[] delimiters = { ',', ':', ' ' };
-
-            string[] rev = s.Split(delimiters);
-            Array.Reverse(rev);
-
-            foreach(string revOrder in rev)
+            int counter = 0;
+            while (theString.IndexOf("the ") != -1)
             {
-                Console.Write("{0} ",revOrder);
+                theString = theString.Substring(theString.IndexOf("the") + 4);
+                    counter++;
             }
+            Console.WriteLine("Word \"the\" occurred {0} times", counter);
         }
 
         static void Main(string[] args)
