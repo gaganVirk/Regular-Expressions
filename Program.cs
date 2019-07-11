@@ -11,23 +11,18 @@ namespace LearningCSharp
     {
         public void Run()
         {
-            string statement = "To be, or not to be: That is the question: Whether ’tis nobler in the mind to suffer the slings and " +
-                "arrows of outrageous fortune, or to take arms against a sea of troubles, and by opposing end them? ";
+            string s = "Hello";
+            string s1 = "World";
+            string s2 = "World";
 
-            char[] delimiters = { ',', ':', ' ' };
-
-            string[] stringArray = statement.Split(delimiters);
-            Array.Reverse(stringArray);
-
-            StringBuilder stringBuilder = new StringBuilder();
-            foreach (string reverse in stringArray)
-            {
-                stringBuilder.AppendFormat("{0} ", reverse);
-            }
-            Console.WriteLine(stringBuilder);
+            Console.WriteLine("s: {0} [{1}]", s, s.Length);
+            Console.WriteLine("s: {0} [{1}]", s, s[2]);
+            Console.WriteLine("s: {0} [{1}]", s, s.ToUpper().IndexOf('H') >= 0 ? "True" : "False");
+            Console.WriteLine("s1 == s2 : {0}", String.Compare(s1,s2) == 0 ? "Same" : "Different");
+            Console.WriteLine("Copy of s3: {0}", String.Compare(s1,s2,true) == 0 ? "Same" : "Different");
         }
-    
-    static void Main(string[] args)
+
+        static void Main(string[] args)
         {
             Tester t = new Tester();
             t.Run();
