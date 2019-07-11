@@ -11,15 +11,18 @@ namespace LearningCSharp
     {
         public void Run()
         {
-            string s = "Hello";
-            string s1 = "World";
-            string s2 = "World";
+            string s = "To be, or not to be: That is the question: Whether ’tis nobler in the mind to suffer the slings and" +
+                " arrows of outrageous fortune, or to take arms against a sea of troubles, and by opposing end them? ";
 
-            Console.WriteLine("s: {0} [{1}]", s, s.Length);
-            Console.WriteLine("s: {0} [{1}]", s, s[2]);
-            Console.WriteLine("s: {0} [{1}]", s, s.ToUpper().IndexOf('H') >= 0 ? "True" : "False");
-            Console.WriteLine("s1 == s2 : {0}", String.Compare(s1,s2) == 0 ? "Same" : "Different");
-            Console.WriteLine("Copy of s3: {0}", String.Compare(s1,s2,true) == 0 ? "Same" : "Different");
+            char[] delimiters = { ',', ':', ' ' };
+
+            string[] rev = s.Split(delimiters);
+            Array.Reverse(rev);
+
+            foreach(string revOrder in rev)
+            {
+                Console.Write("{0} ",revOrder);
+            }
         }
 
         static void Main(string[] args)
