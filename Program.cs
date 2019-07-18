@@ -11,19 +11,15 @@ namespace LearningCSharp
     {
         public void Run()
         {
-            string theString = "We choose to go to the moon. We choose to go to the moon in this decade and" +
-                " do the other things, not because they are easy, but because they are hard, because that" +
-                " goal will serve to organize and measure the best of our energies and skills, because that " +
-                "challenge is one that we are willing to accept, one we are unwilling to postpone, and" +
-                " one which we intend to win, and the others, too. ";
-
-            int counter = 0;
-            while (theString.IndexOf("the ") != -1)
-            {
-                theString = theString.Substring(theString.IndexOf("the") + 4);
-                    counter++;
-            }
-            Console.WriteLine("Word \"the\" occurred {0} times", counter);
+            /*   string theString = "We hold these truths to be self-evident, that all men are created equal, that " +
+                   "they are endowed by their Creator with certain unalienable Rights, that among these are Life, " +
+                   "Liberty and the pursuit of Happiness. "; */
+            string s1 = "Hello";
+            string s2 = "Hello";
+            Console.WriteLine("The third character : {0}", s1[2]);
+            Console.WriteLine("H appears in each string: {0}", s1.ToUpper().IndexOf('H') >= 0 ? "Yes" : "No");
+            Console.WriteLine("Two strings are same: {0}", s1.CompareTo(s2) == 0 ? "Same" : "Diff");
+            Console.ReadLine();
         }
 
         static void Main(string[] args)
