@@ -14,11 +14,18 @@ namespace LearningCSharp
             /*   string theString = "We hold these truths to be self-evident, that all men are created equal, that " +
                    "they are endowed by their Creator with certain unalienable Rights, that among these are Life, " +
                    "Liberty and the pursuit of Happiness. "; */
-            string s1 = "Hello";
-            string s2 = "Hello";
-            Console.WriteLine("The third character : {0}", s1[2]);
-            Console.WriteLine("H appears in each string: {0}", s1.ToUpper().IndexOf('H') >= 0 ? "Yes" : "No");
-            Console.WriteLine("Two strings are same: {0}", s1.CompareTo(s2) == 0 ? "Same" : "Diff");
+
+            string s = "To be, or not to be: That is the question: Whether 'tis nobler in the mind to suffer the" +
+                 "slings and arrows of outrageous fortune, or to take arms against a sear of troubles, and " +
+                 "by opposing them end them?";
+
+            char[] delimiters = { ',', ':', ' ' };
+            string[] rev = s.Split(delimiters);
+            Array.Reverse(rev);
+            foreach(string c in rev)
+            {
+                Console.Write("{0} ",c);
+            }
             Console.ReadLine();
         }
 
