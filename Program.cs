@@ -15,17 +15,22 @@ namespace LearningCSharp
                    "they are endowed by their Creator with certain unalienable Rights, that among these are Life, " +
                    "Liberty and the pursuit of Happiness. "; */
 
-            string s = "To be, or not to be: That is the question: Whether 'tis nobler in the mind to suffer the" +
-                 "slings and arrows of outrageous fortune, or to take arms against a sear of troubles, and " +
-                 "by opposing them end them?";
+            string s = "We choose to go to the moon. We choose to go to the moon in this decade and do the " +
+                "other things, not because they are easy, but because they are hard, because that goal" +
+                "will serve to organize and measure the best of our energies and skills, because that " +
+                "challenge is one that we are willing to accept, one we are unwilling to postpone, and" +
+                "one which we intend to win, adn the others too";
 
-            char[] delimiters = { ',', ':', ' ' };
-            string[] rev = s.Split(delimiters);
-            Array.Reverse(rev);
-            foreach(string c in rev)
+            int counter = 0;
+
+            while (s.IndexOf("the ") != -1)
             {
-                Console.Write("{0} ",c);
+                s = s.Substring(s.IndexOf("the ") + 4);
+                counter++; 
             }
+            Console.WriteLine("The word 'the' ocurred {0} times", counter);
+
+
             Console.ReadLine();
         }
 
