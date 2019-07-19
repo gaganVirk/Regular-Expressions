@@ -11,24 +11,16 @@ namespace LearningCSharp
     {
         public void Run()
         {
-            /*   string theString = "We hold these truths to be self-evident, that all men are created equal, that " +
+              string theString = "We hold these truths to be self-evident, that all men are created equal, that " +
                    "they are endowed by their Creator with certain unalienable Rights, that among these are Life, " +
-                   "Liberty and the pursuit of Happiness. "; */
+                   "Liberty and the pursuit of Happiness. ";
 
-            string s = "We choose to go to the moon. We choose to go to the moon in this decade and do the " +
-                "other things, not because they are easy, but because they are hard, because that goal" +
-                "will serve to organize and measure the best of our energies and skills, because that " +
-                "challenge is one that we are willing to accept, one we are unwilling to postpone, and" +
-                "one which we intend to win, adn the others too";
-
-            int counter = 0;
-
-            while (s.IndexOf("the ") != -1)
+            int id = 1;
+            Regex theRegex = new Regex(" |, |,");
+            foreach (string myString in theRegex.Split(theString))
             {
-                s = s.Substring(s.IndexOf("the ") + 4);
-                counter++; 
+                Console.WriteLine("{0}: {1}\n", id, myString);
             }
-            Console.WriteLine("The word 'the' ocurred {0} times", counter);
 
 
             Console.ReadLine();
